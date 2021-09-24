@@ -1,0 +1,27 @@
+.demo-card-wide.mdl-card {
+  width: 100%;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 250px;
+  background: url('http://placehold.it/300x300?text=loading') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+
+#p2 {
+  width: 100%;
+  display: none;
+}
+.demo-list-three {
+  width: 100%;
+}
+
+#showBox {
+  padding: 0 0 3px 0;
+}
+
+#showBox img {
+  width: 100%;
+}
