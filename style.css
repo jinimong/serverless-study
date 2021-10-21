@@ -2,9 +2,9 @@
   width: 100%;
 }
 .demo-card-wide > .mdl-card__title {
-  color: #fff;
-  height: 250px;
-  background: url('http://placehold.it/300x300?text=loading') center / cover;
+  color: #222;
+  height: 300px;
+  background: url('./aws-arch.png') center / contain no-repeat;
 }
 .demo-card-wide > .mdl-card__menu {
   color: #fff;

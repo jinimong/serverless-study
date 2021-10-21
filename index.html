@@ -78,11 +78,11 @@ whether and how they wish to license it. -->
               <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
                 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                   <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text">hello</h2>
+                    <h2 class="mdl-card__title-text">Hello Serverless!</h2>
                   </div>
                   <div class="mdl-card__supporting-text">
                     <!-- Numeric Textfield with Floating Label -->
-                    <form action="#">
+                    <form id="postForm" name="postForm">
                       <div
                         class="
                           mdl-textfield mdl-js-textfield
@@ -92,7 +92,8 @@ whether and how they wish to license it. -->
                         <select
                           class="mdl-textfield__input"
                           type="text"
-                          id="conference_type"
+                          id="type"
+                          name="type"
                         >
                           <option value="Serverless Web Project">
                             Serverless Web Project
@@ -117,6 +118,7 @@ whether and how they wish to license it. -->
                           class="mdl-textfield__input"
                           type="text"
                           id="user_id"
+                          name="user_id"
                         />
                         <label class="mdl-textfield__label" for="user_id"
                           >User ID</label
@@ -132,6 +134,7 @@ whether and how they wish to license it. -->
                           class="mdl-textfield__input"
                           type="text"
                           id="user_name"
+                          name="user_name"
                         />
                         <label class="mdl-textfield__label" for="user_name"
                           >User Name</label
@@ -148,6 +151,7 @@ whether and how they wish to license it. -->
                           type="text"
                           pattern="-?[0-9]*(\.[0-9]+)?"
                           id="phone_number"
+                          name="phone_number"
                         />
                         <label class="mdl-textfield__label" for="phone_number"
                           >Phone Number</label
@@ -165,14 +169,11 @@ whether and how they wish to license it. -->
                         <input
                           class="mdl-textfield__input"
                           type="text"
-                          pattern="-?[0-9]*(\.[0-9]+)?"
-                          id="phone_number"
+                          id="company_name"
+                          name="company_name"
                         />
-                        <label class="mdl-textfield__label" for="phone_number"
-                          >Phone Number</label
-                        >
-                        <span class="mdl-textfield__error"
-                          >Input is not a number!</span
+                        <label class="mdl-textfield__label" for="company_name"
+                          >Company Name</label
                         >
                       </div>
                     </form>
@@ -187,8 +188,8 @@ whether and how they wish to license it. -->
                   ></div>
                   <div class="mdl-card__actions mdl-card--border">
                     <button
+                      id="submitBtn"
                       class="mdl-button mdl-js-button mdl-button--raised"
-                      disabled
                     >
                       SUBMIT
                     </button>
@@ -212,14 +213,8 @@ whether and how they wish to license it. -->
         <section class="mdl-layout__tab-panel" id="fixed-tab-2">
           <div class="page-content">
             <dialog class="mdl-dialog">
-              <h4 class="mdl-dialog__title">Allow data collection?</h4>
-              <div id="showBox" class="mdl-dialog__content">
-                <img
-                  src="http://placehold.it/400x250?text=image"
-                  alt=""
-                  srcset=""
-                />
-              </div>
+              <h4 class="mdl-dialog__title">이용자 정보</h4>
+              <div id="showBox" class="mdl-dialog__content"></div>
               <div class="mdl-dialog__actions">
                 <button type="button" class="mdl-button print">Print</button>
                 <button type="button" class="mdl-button close">Cancel</button>
@@ -229,40 +224,7 @@ whether and how they wish to license it. -->
             <div class="mdl-grid">
               <div class="mdl-layout-spacer"></div>
               <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-                <ul class="demo-list-three mdl-list">
-                  <li class="mdl-list__item mdl-list__item--three-line">
-                    <span class="mdl-list__item-primary-content">
-                      <i class="material-icons mdl-list__item-avatar">person</i>
-                      <span>Name</span>
-                      <span class="mdl-list__item-text-body"
-                        >From Company Name...</span
-                      >
-                    </span>
-                    <span class="mdl-list__item-secondary-content">
-                      <a
-                        class="show-dialog mdl-list__item-secondary-action"
-                        href="#"
-                        ><i class="material-icons">print</i></a
-                      >
-                    </span>
-                  </li>
-                  <li class="mdl-list__item mdl-list__item--three-line">
-                    <span class="mdl-list__item-primary-content">
-                      <i class="material-icons mdl-list__item-avatar">person</i>
-                      <span>Name</span>
-                      <span class="mdl-list__item-text-body"
-                        >From Company Name...</span
-                      >
-                    </span>
-                    <span class="mdl-list__item-secondary-content">
-                      <a
-                        class="show-dialog mdl-list__item-secondary-action"
-                        href="#"
-                        ><i class="material-icons">print</i></a
-                      >
-                    </span>
-                  </li>
-                </ul>
+                <ul id="history" class="demo-list-three mdl-list"></ul>
               </div>
               <div class="mdl-layout-spacer"></div>
             </div>
